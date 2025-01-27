@@ -2,13 +2,17 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
+// This page allows users to create new Categories to be stored in the database.
+
 const Create = () => {
     const [name, setName] = useState("");
     const router = useRouter();
 
+    // Called when user presses the Create button
     const submitHandler = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
+            // Make POST request to create new Category
             const response = await fetch("http://localhost:5229/api/category/create", {
                 method: "POST",
                 headers: {

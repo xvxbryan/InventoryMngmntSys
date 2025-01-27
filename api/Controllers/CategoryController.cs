@@ -22,6 +22,7 @@ namespace api.Controllers
 
         [HttpGet]
         [Route("get")]
+        // This function will return all categories from the database
         public async Task<IActionResult> GetAll() {
             var categories = await _categoryRepo.GetAllAsync();
             var categoryDto = categories.Select(s => s.ToCategoryDto());
@@ -30,6 +31,7 @@ namespace api.Controllers
 
         [HttpGet]
         [Route("get/{id}")]
+        // This function will return a specific category from the database according to its Id
         public async Task<IActionResult> GetById([FromRoute] int id) {
             var category = await _categoryRepo.GetByIdAsync(id);
             if(category == null) {
@@ -40,6 +42,7 @@ namespace api.Controllers
 
         [HttpPost]
         [Route("create")]
+        // This function will store a brand new category to the database
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto categoryDto) {
             if(!ModelState.IsValid) {
                 return BadRequest(ModelState);
@@ -53,6 +56,7 @@ namespace api.Controllers
 
         [HttpPut]
         [Route("update/{id}")]
+        // This function will update the name of an existing category
         public async Task<IActionResult> UpdateCategory([FromRoute] int id, [FromBody] UpdateCategoryDto categoryDto) {
             if(!ModelState.IsValid) {
                 return BadRequest(ModelState);
