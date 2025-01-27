@@ -14,6 +14,7 @@ namespace api.Data
         {
             
         }
+        // This allows Categories to be called from with the Repository to reference the database
         public DbSet<Category> Categories { get; set; }
     }
 }

@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
+// This component displays all the existing categories
+
 interface Category {
     id: number;
     name: string;
 }
 
 const ViewCategories = async () => {
+    // Make GET request to retrieve all existing categories
     const res = await fetch("http://localhost:5229/api/category/get");
     const categories : Category[] = await res.json();
     return (

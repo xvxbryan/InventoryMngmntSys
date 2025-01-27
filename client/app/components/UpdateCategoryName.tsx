@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
+// This is the form where a user enters a new name for an existing Category
+
 interface UpdateCategoryNameProps {
     id: number;
 }
@@ -10,9 +12,11 @@ const UpdateCategoryName: React.FC<UpdateCategoryNameProps> = ({ id }) => {
     const [name, setName] = useState("");
     const router = useRouter();
 
+    // Called when user presses the Update button
     const submitHandler = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
+            // Make PUT request to update the name of an existing Category
             const response = await fetch(`http://localhost:5229/api/category/update/${id}`, {
                 method: "PUT",
                 headers: {

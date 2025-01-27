@@ -1,6 +1,8 @@
 import UpdateCategoryName from "@/app/components/UpdateCategoryName";
 import React from "react";
 
+// This page allows users to update the name of an existing Category
+
 interface PageProps {
     params: { id: string };
 }
@@ -13,12 +15,15 @@ interface Category {
 const UpdateCategory = async ({ params }: PageProps) => {
     const { id } = await params;
 
+    // Make GET request to get the specific Category by Id
     const res = await fetch(`http://localhost:5229/api/category/get/${id}`);
     const category: Category = await res.json();
     
     return (
         <div className="p-5">
             <h1 className="mb-5 text-3xl font-semibold">{category.name}</h1>
+
+            {/* Update Category form */}
             <UpdateCategoryName id={category.id}/>
         </div>
     );
