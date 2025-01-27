@@ -1,2 +1,3 @@
-First project built using ASP.NET 9 (Inventory Management System).
-Work in progress.
+Inventory Management System project
+I am building this to learn ASP.NET 9 and NextJS
+Work in progress
