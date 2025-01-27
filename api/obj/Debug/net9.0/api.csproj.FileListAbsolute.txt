@@ -156,3 +156,4 @@ C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\refint\
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.pdb
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.genruntimeconfig.cache
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\ref\api.dll
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.sourcelink.json
