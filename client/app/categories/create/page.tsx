@@ -1,4 +1,5 @@
 "use client";
+import InputComponent from '@/app/components/InputComponent';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
@@ -37,11 +38,12 @@ const Create = () => {
         <div className="p-5">
             <h1 className="mb-5 text-3xl font-semibold">Create a category</h1>
             <form onSubmit={submitHandler}>
-                <input
+                <InputComponent
+                    label="Category"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    change={setName}
                     placeholder="Add category name"
-                />
+                    type="text"/>
                 <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-5'>Create</button>
                 <button type="button" className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' onClick={() => router.push(`/categories`)}>Cancel</button>
             </form>
