@@ -1,15 +1,11 @@
 import UpdateCategoryName from "@/app/components/UpdateCategoryName";
+import Category from "@/app/interfaces/Category";
 import React from "react";
 
 // This page allows users to update the name of an existing Category
 
 interface PageProps {
     params: { id: string };
-}
-
-interface Category {
-    id: number;
-    name: string;
 }
 
 const UpdateCategory = async ({ params }: PageProps) => {
