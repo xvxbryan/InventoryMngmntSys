@@ -1,12 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import Category from "../interfaces/Category";
 
 // This component displays all the existing categories
-
-interface Category {
-    id: number;
-    name: string;
-}
 
 const ViewCategories = async () => {
     // Make GET request to retrieve all existing categories
