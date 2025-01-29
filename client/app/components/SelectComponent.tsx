@@ -3,11 +3,12 @@ import Category from "../interfaces/Category";
 
 
 interface SelectProps {
+    category: Category | null;
     selectOptions: Array<Category>;
     setSelect: (category: Category | null) => void;
 }
 
-const SelectComponent: React.FC<SelectProps> = ({selectOptions, setSelect}) => {
+const SelectComponent: React.FC<SelectProps> = ({category, selectOptions, setSelect}) => {
     const selectCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelect({
             id: e.target.selectedIndex,
@@ -24,11 +25,12 @@ const SelectComponent: React.FC<SelectProps> = ({selectOptions, setSelect}) => {
                         className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer"
                         name="category"
                         onChange={selectCategory}
+                        value={category?.id ?? ""}
                     >
                         <option hidden>Select Category</option>
                         {selectOptions.map((option) => {
                             return (
-                                <option key={option.id}>
+                                <option key={option.id} value={option.id}>
                                     {option.name}
                                 </option>
                             );

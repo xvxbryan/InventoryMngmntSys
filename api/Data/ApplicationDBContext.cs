@@ -14,6 +14,15 @@ namespace api.Data
         {
             
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Item>()
+                .HasOne(i => i.Category)
+                .WithMany(c => c.Items)
+                .HasForeignKey(i => i.CategoryId);
+        }
+        
         // This allows Categories to be called from with the Repository to reference the database
         public DbSet<Category> Categories { get; set; }
         public DbSet<Item> Items { get; set; }

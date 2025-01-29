@@ -13,5 +13,6 @@ namespace api.Interfaces
         Task<Item?> GetByIdAsync(int id);
         Task<Item> CreateAsync(Item itemModel);
         Task<Item?> UpdateAsync(int id, UpdateItemDto itemModel);
+        Task<Item?> DeleteAsync(int id);
     }
 }

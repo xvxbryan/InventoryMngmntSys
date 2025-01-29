@@ -1,4 +1,5 @@
 "use client";
+import CategoriesForSelect from "@/app/components/CategoriesForSelect";
 import InputComponent from "@/app/components/InputComponent";
 import SelectComponent from "@/app/components/SelectComponent";
 import Category from "@/app/interfaces/Category";
@@ -13,18 +14,6 @@ const Add = () => {
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
     const [category, setCategory] = useState<Category | null>(null);
-    const [categories, setCategories] = useState<Category[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getCategories = async () => {
-            const res = await fetch("http://localhost:5229/api/category/get");
-            setCategories(await res.json());
-            setLoading(false);
-        };
-
-        getCategories();
-    }, []);
 
     const router = useRouter();
 
@@ -51,17 +40,12 @@ const Add = () => {
                 router.push(`/items`);
             } else {
                 const errorData = await response.json();
-                console.log("errorData ", errorData)
                 alert(`Error creating item: ${errorData.message}`);
             }
         } catch (error) {
             alert(`An unexpected error occurred: ${error}`);
         }
     }    
-
-    if (loading) {
-        return <div className="p-5">Loading...</div>;
-    }
 
     return (
         <div className="p-5">
@@ -96,9 +80,11 @@ const Add = () => {
                     placeholder="Price of item"
                     type="number"
                 />
-                <SelectComponent
-                    setSelect={setCategory}
-                    selectOptions={categories}/>
+                <CategoriesForSelect
+                    category={category}
+                    setCategory={setCategory}
+                    />
+
                 <div className="mt-5">
                     <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-5'>Add Item</button>
                     <button type="button" className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' onClick={() => router.push(`/items`)}>Cancel</button>
