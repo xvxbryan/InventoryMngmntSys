@@ -16,7 +16,8 @@ namespace api.Mappers
                 Description = itemModel.Description,
                 Quantity = itemModel.Quantity,
                 Price = itemModel.Price,
-                CategoryId = itemModel.CategoryId
+                CategoryId = itemModel.CategoryId,
+                Category = itemModel.Category != null ? itemModel.Category.ToCategoryDto() : null
             };
         }
 

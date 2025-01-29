@@ -14,10 +14,21 @@ namespace api.Controllers
     public class ItemController : ControllerBase
     {
         private readonly IItemRepository _itemRepo;
+        private readonly ICategoryRepository _categoryRepo;
 
-        public ItemController(IItemRepository itemRepo)
+
+        public ItemController(IItemRepository itemRepo, ICategoryRepository categoryRepo)
         {
             _itemRepo = itemRepo;
+            _categoryRepo = categoryRepo;
+        }
+
+        [HttpGet]
+        [Route("get")]
+        // This function will return a specific category from the database according to its Id
+        public async Task<IActionResult> GetAll() {
+            var item = await _itemRepo.GetAllAsync();
+            return Ok(item.ToList());
         }
 
         [HttpGet]
@@ -39,9 +50,35 @@ namespace api.Controllers
             }
 
             var itemModel = itemDto.ToItemFromCreate();
+            var category = await _categoryRepo.GetByIdAsync(itemDto.CategoryId);
+            itemModel.Category = category;
             await _itemRepo.CreateAsync(itemModel);
             return CreatedAtAction(nameof(GetById), new { id = itemModel.Id }, itemModel.ToItemDto());
         }
-        
+
+        [HttpPut]
+        [Route("update/{id}")]
+        public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateItemDto itemDto) {
+            if(!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
+            var itemModel = await _itemRepo.UpdateAsync(id, itemDto);
+            if(itemModel == null) {
+                return NotFound();
+            }
+
+            return Ok(itemModel.ToItemDto());
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public async Task<IActionResult> DeleteAsync([FromRoute] int id) {
+            var item = await _itemRepo.DeleteAsync(id);
+            if(item == null) {
+                return NotFound();
+            }
+            return NoContent();
+        }
     }
 }

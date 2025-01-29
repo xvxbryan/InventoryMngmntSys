@@ -140,6 +140,7 @@ C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.Ass
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.csproj.CoreCompileInputs.cache
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.sourcelink.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\scopedcss\bundle\api.styles.css
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\staticwebassets.development.json
@@ -156,4 +157,3 @@ C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\refint\
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.pdb
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.genruntimeconfig.cache
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\ref\api.dll
-C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Debug\net9.0\api.sourcelink.json
