@@ -37,7 +37,7 @@ const Add = () => {
 
             if (response.ok) {
                 alert("Item created successfully");
-                router.push(`/items`);
+                router.push(`/`);
             } else {
                 const errorData = await response.json();
                 alert(`Error creating item: ${errorData.message}`);
@@ -87,7 +87,7 @@ const Add = () => {
 
                 <div className="mt-5">
                     <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-5'>Add Item</button>
-                    <button type="button" className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' onClick={() => router.push(`/items`)}>Cancel</button>
+                    <button type="button" className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' onClick={() => router.push(`/`)}>Cancel</button>
                 </div>
             </form>
         </div>
