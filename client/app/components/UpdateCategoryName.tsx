@@ -19,7 +19,7 @@ const UpdateCategoryName: React.FC<UpdateCategoryNameProps> = ({ id }) => {
         try {
             // Make PUT request to update the name of an existing Category
             const response = await fetch(
-                `http://localhost:5229/api/category/update/${id}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/category/update/${id}`,
                 {
                     method: "PUT",
                     headers: {
