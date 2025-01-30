@@ -12,7 +12,7 @@ namespace api.Data
         public ApplicationDBContext(DbContextOptions dbContextOptions)
         : base(dbContextOptions)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,8 +21,12 @@ namespace api.Data
                 .HasOne(i => i.Category)
                 .WithMany(c => c.Items)
                 .HasForeignKey(i => i.CategoryId);
+                
+            modelBuilder.Entity<Category>()
+                .Property(c => c.Name)
+                .HasColumnType("text");
         }
-        
+
         // This allows Categories to be called from with the Repository to reference the database
         public DbSet<Category> Categories { get; set; }
         public DbSet<Item> Items { get; set; }

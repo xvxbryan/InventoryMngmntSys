@@ -13,7 +13,7 @@ const CategoriesForSelect: React.FC<SetCategoryProps> = ({ category, setCategory
 
     useEffect(() => {
         const getCategories = async () => {
-            const res = await fetch("http://localhost:5229/api/category/get");
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get`);
             setCategories(await res.json());
             setLoading(false);
         };
