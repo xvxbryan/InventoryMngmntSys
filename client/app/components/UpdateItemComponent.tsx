@@ -41,7 +41,7 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
 
             if (response.ok) {
                 alert("Item updated successfully");
-                router.push(`/items`);
+                router.push(`/`);
             } else {
                 const errorData = await response.json();
                 alert(`Error updating item: ${errorData.message}`);
@@ -106,7 +106,7 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
             <button
                 type="button"
                 className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => router.push(`/items`)}
+                onClick={() => router.push(`/`)}
             >
                 Cancel
             </button>

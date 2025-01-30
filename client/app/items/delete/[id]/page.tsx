@@ -28,7 +28,7 @@ const DeleteItem = async ({ params }: PageProps) => {
                     type="button"
                     className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
                 >
-                    <Link href="/items">Cancel</Link>
+                    <Link href="/">Cancel</Link>
                 </button>
             </div>
         </div>

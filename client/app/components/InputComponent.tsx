@@ -17,7 +17,9 @@ const InputComponent: React.FC<InputProps> = ({
 }) => {
     return (
         <div className="flex flex-col">
-            <label htmlFor="name">{label}</label>
+            {
+                label.length > 0 ? <label htmlFor="name">{label}</label> : null
+            }
 
             <div className="w-full max-w-sm min-w-[200px]">
                 <input
