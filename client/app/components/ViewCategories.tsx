@@ -6,7 +6,7 @@ import Category from "../interfaces/Category";
 
 const ViewCategories = async () => {
     // Make GET request to retrieve all existing categories
-    const res = await fetch("http://localhost:5229/api/category/get");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get`);
     const categories : Category[] = await res.json();
     return (
         <div className="w-full max-w-sm min-w-[200px]">

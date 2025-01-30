@@ -14,7 +14,7 @@ const Create = () => {
         event.preventDefault();
         try {
             // Make POST request to create new Category
-            const response = await fetch("http://localhost:5229/api/category/create", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
