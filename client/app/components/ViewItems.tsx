@@ -8,7 +8,7 @@ import Item from '../interfaces/Item';
 
 
 const ViewItems = async () => {
-    const res = await fetch("http://localhost:5229/api/item/get");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get`);
     const items : Item[] = await res.json();
     return (
         <div>

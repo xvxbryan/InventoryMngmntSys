@@ -13,7 +13,7 @@ const DeleteItemComponent: React.FC<DeleteProps> = ({ id }) => {
         try {
             // Make PUT request to update the properties of an existing Item
             const response = await fetch(
-                `http://localhost:5229/api/item/delete/${id}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/item/delete/${id}`,
                 {
                     method: "DELETE",
                     headers: {

@@ -23,7 +23,7 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
         try {
             // Make PUT request to update the properties of an existing Item
             const response = await fetch(
-                `http://localhost:5229/api/item/update/${item.id}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/item/update/${item.id}`,
                 {
                     method: "PUT",
                     headers: {
