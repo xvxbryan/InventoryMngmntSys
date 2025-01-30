@@ -1,19 +1,16 @@
 import Link from "next/link";
+import ViewItems from "./components/ViewItems";
+import SearchBar from "./components/SearchBar";
 
 export default function Home() {
     return (
         <main>
             <div className="p-5">
-                <div>
-                    <Link href="items" className="text-blue-600 underline">
-                        View Items
-                    </Link>
+                <div className="flex flex-row">
+                    <h1 className="mb-5 text-3xl font-semibold">Items</h1>
+                    {/* <SearchBar/> */}
                 </div>
-                <div>
-                    <Link href="categories" className="text-blue-600 underline">
-                        View Categories
-                    </Link>
-                </div>
+                <ViewItems />
             </div>
         </main>
     );

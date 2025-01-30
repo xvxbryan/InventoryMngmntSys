@@ -24,7 +24,7 @@ const DeleteItemComponent: React.FC<DeleteProps> = ({ id }) => {
 
             if (response.ok) {
                 alert("Item updated successfully");
-                router.push(`/items`);
+                router.push(`/`);
             } else {
                 const errorData = await response.json();
                 alert(`Error updating item: ${errorData.message}`);

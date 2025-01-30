@@ -30,7 +30,7 @@ const ViewItems = async () => {
                             <td className="p-4 border-b border-blue-gray-50">{item.name}</td>
                             <td className="p-4 border-b border-blue-gray-50">{item.description}</td>
                             <td className="p-4 border-b border-blue-gray-50">{item.quantity}</td>
-                            <td className="p-4 border-b border-blue-gray-50">{item.price}</td>
+                            <td className="p-4 border-b border-blue-gray-50">${item.price.toFixed(2)}</td>
                             <td className="p-4 border-b border-blue-gray-50">{item.category.name}</td>
                             <td className="p-4 border-b border-blue-gray-50">
                                 <i>
@@ -50,7 +50,7 @@ const ViewItems = async () => {
                 <Link href="items/add">Add Item</Link>
             </button>
             <button className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>
-                <Link href="/">Cancel</Link>
+                <Link href="/categories">View Categories</Link>
             </button>
         </div>
     )
