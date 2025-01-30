@@ -10,10 +10,14 @@ interface SelectProps {
 
 const SelectComponent: React.FC<SelectProps> = ({category, selectOptions, setSelect}) => {
     const selectCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelect({
-            id: e.target.selectedIndex,
-            name: e.target.value,
-        });
+        const selectedId = Number(e.target.value);
+        const selectedCategory = selectOptions.find(option => option.id === selectedId) || null;
+
+        if (selectedCategory) {
+            setSelect(selectedCategory);
+        } else {
+            setSelect(null);
+        }
     };
 
     return (
