@@ -1,1 +1,5 @@
-{}
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "api\\bin\\Release\\net9.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/53b79a58-d7b0-473c-bd28-f4dc12e5a615/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/InventoryManagementSystem"
+}
