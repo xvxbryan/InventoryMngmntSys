@@ -23,16 +23,14 @@ namespace api.Controllers
             _categoryRepo = categoryRepo;
         }
 
-        [HttpGet]
-        [Route("get")]
+        [HttpGet("get")]
         // This function will return a specific category from the database according to its Id
         public async Task<IActionResult> GetAll() {
             var item = await _itemRepo.GetAllAsync();
             return Ok(item.ToList());
         }
 
-        [HttpGet]
-        [Route("get/{id}")]
+        [HttpGet("get/{id}")]
         // This function will return a specific category from the database according to its Id
         public async Task<IActionResult> GetById([FromRoute] int id) {
             var item = await _itemRepo.GetByIdAsync(id);
@@ -42,8 +40,7 @@ namespace api.Controllers
             return Ok(item.ToItemDto());
         }
 
-        [HttpPost]
-        [Route("create")]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateAsync([FromBody] CreateItemDto itemDto) {
             if(!ModelState.IsValid) {
                 return BadRequest(ModelState);
@@ -56,8 +53,7 @@ namespace api.Controllers
             return CreatedAtAction(nameof(GetById), new { id = itemModel.Id }, itemModel.ToItemDto());
         }
 
-        [HttpPut]
-        [Route("update/{id}")]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateItemDto itemDto) {
             if(!ModelState.IsValid) {
                 return BadRequest(ModelState);
@@ -71,8 +67,7 @@ namespace api.Controllers
             return Ok(itemModel.ToItemDto());
         }
 
-        [HttpDelete]
-        [Route("delete/{id}")]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] int id) {
             var item = await _itemRepo.DeleteAsync(id);
             if(item == null) {
