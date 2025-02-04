@@ -160,3 +160,10 @@ C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Release\net9.0\refin
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Release\net9.0\api.pdb
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Release\net9.0\api.genruntimeconfig.cache
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\obj\Release\net9.0\ref\api.dll
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\appsettings.Development.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\appsettings.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\web.config
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\api.deps.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\api.runtimeconfig.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\api.staticwebassets.endpoints.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\bin\Release\net9.0\publish\appsettings.Production.json

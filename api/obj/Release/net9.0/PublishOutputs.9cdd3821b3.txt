@@ -1,7 +1,14 @@
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\api.exe
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\web.config
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\appsettings.Development.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\appsettings.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\appsettings.Production.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\api.deps.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\api.runtimeconfig.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\api.staticwebassets.endpoints.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\appsettings.Development.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\appsettings.json
+C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\publish\appsettings.Production.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\api.dll
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\api.deps.json
 C:\Users\Bryan\ASP.NET Tutorials\InventoryMngmntSys\api\publish\api.runtimeconfig.json
