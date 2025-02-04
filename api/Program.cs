@@ -16,10 +16,14 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 
-builder.Services.AddDbContext<ApplicationDBContext> (options => {
-    // options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+var sqlConnection = builder.Configuration["ConnectionStrings:InvMngSys:SqlDb"];
+
+builder.Services.AddSqlServer<ApplicationDBContext>(sqlConnection, options => options.EnableRetryOnFailure());
+
+// builder.Services.AddDbContext<ApplicationDBContext> (options => {
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+//     // options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+// });
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
