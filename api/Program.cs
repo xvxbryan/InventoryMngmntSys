@@ -54,7 +54,7 @@ app.UseCors(x => x
     .SetIsOriginAllowed(origin => true)
 );
 
-app.MapGet("/", () => "API is running!");
+app.MapGet("/", () => "API is running!!!");
 app.MapControllers();
 
 app.Run();
