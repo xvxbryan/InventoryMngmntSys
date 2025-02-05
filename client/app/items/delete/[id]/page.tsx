@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 const DeleteItem = async ({ params }: PageProps) => {
-    const { id } = await params;
+    const { id } = params;
 
     // Make GET request to get the specific Category by Id
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get/${id}`);
