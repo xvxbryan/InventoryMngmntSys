@@ -20,6 +20,10 @@ const CategoriesForSelect: React.FC<SetCategoryProps> = ({ category, setCategory
 
         getCategories();
     }, []);
+
+    if(loading) {
+        return <div>Loading...</div>
+    }
     return (
         <SelectComponent 
             category={category}

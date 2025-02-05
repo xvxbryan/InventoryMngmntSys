@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react'
-import Category from '../interfaces/Category';
 import Item from '../interfaces/Item';
 
 // This component displays all the existing items

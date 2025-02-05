@@ -1,7 +1,6 @@
 "use client";
 import CategoriesForSelect from "@/app/components/CategoriesForSelect";
 import InputComponent from "@/app/components/InputComponent";
-import SelectComponent from "@/app/components/SelectComponent";
 import Category from "@/app/interfaces/Category";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
