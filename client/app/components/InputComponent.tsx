@@ -2,7 +2,7 @@ import React from "react";
 
 interface InputProps {
     value: string;
-    change: (value: any) => void;
+    change: (value: string) => void;
     placeholder: string;
     label: string;
     type: string;

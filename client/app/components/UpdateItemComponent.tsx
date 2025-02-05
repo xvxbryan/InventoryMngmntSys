@@ -51,6 +51,14 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
         }
     };
 
+    const handleQuantityChange = (value: string) => {
+        setQuantity(Number(value)); // Convert the string value to a number
+    };
+
+    const handlePriceChange = (value: string) => {
+        setPrice(Number(value)); // Convert the string value to a number
+    };
+
     return (
         <form onSubmit={submitHandler}>
             <div className="flex flex-col mb-5">
@@ -76,7 +84,7 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
                     <InputComponent
                         label="Edit Quantity"
                         value={quantity.toString()}
-                        change={setQuantity}
+                        change={handleQuantityChange}
                         placeholder="Replace quantity"
                         type="text"
                     />
@@ -85,7 +93,7 @@ const UpdateItemComponent: React.FC<UpdateItemProps> = ({ item }) => {
                     <InputComponent
                         label="Edit Price"
                         value={price.toString()}
-                        change={setPrice}
+                        change={handlePriceChange}
                         placeholder="Replace price"
                         type="text"
                     />
