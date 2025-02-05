@@ -3,7 +3,7 @@ import CategoriesForSelect from "@/app/components/CategoriesForSelect";
 import InputComponent from "@/app/components/InputComponent";
 import Category from "@/app/interfaces/Category";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // This page allows users to add new Items to be stored in the database.
 
