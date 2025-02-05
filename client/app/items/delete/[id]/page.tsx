@@ -1,6 +1,6 @@
 import DeleteItemComponent from "@/app/components/DeleteItemComponent";
 import Item from "@/app/interfaces/Item";
-import PageProps from "@/app/interfaces/PageId";
+import { PageProps } from "@/app/interfaces/PageId";
 import Link from "next/link";
 import React from "react";
 

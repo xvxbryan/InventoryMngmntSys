@@ -1,6 +1,6 @@
 import UpdateItemComponent from "@/app/components/UpdateItemComponent";
 import Item from "@/app/interfaces/Item";
-import PageProps from "@/app/interfaces/PageId";
+import { PageProps } from "@/app/interfaces/PageId";
 import React from "react";
 
 const UpdateItem = async ({ params }: PageProps) => {

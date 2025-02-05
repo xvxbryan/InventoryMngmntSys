@@ -1,3 +1,3 @@
-export default interface PageProps {
+export interface PageProps {
     params: { id: string };
 }
