@@ -7,7 +7,7 @@ import React from "react";
 
 const UpdateCategory = async ({ params }: PageProps) => {
     try {
-        const { id } = await params;
+        const { id } = params;
 
         // Make GET request to get the specific Category by Id
         const res = await fetch(
