@@ -6,7 +6,7 @@ import React from "react";
 // This page allows users to update the name of an existing Category
 
 const UpdateCategory = async ({ params }: PageProps) => {
-    const { id } = await params;
+    const { id } = params;
 
     // Make GET request to get the specific Category by Id
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get/${id}`);
