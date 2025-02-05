@@ -32,6 +32,7 @@ const UpdateCategory = async ({ params }: PageProps) => {
             </div>
         );
     } catch (error) {
+        console.log("error ", error)
         return (
             <div className="p-5 text-red-500">
                 <h1 className="text-2xl font-semibold">Error</h1>
