@@ -50,7 +50,7 @@ app.UseCors(x => x
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowCredentials()
-    //.WithOrigins("http://localhost:3000")
+    .WithOrigins("https://inv-mngmnt-sys.vercel.app")
     .SetIsOriginAllowed(origin => true)
 );
 
