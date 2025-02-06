@@ -5,6 +5,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        policy =>
+        {
+            policy.WithOrigins("https://inv-mngmnt-sys.vercel.app") // Allow only your frontend
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -46,13 +57,29 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 
 app.UseHttpsRedirection();
 
-app.UseCors(x => x
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()
-    .WithOrigins("https://inv-mngmnt-sys.vercel.app")
-    .SetIsOriginAllowed(origin => true)
-);
+app.UseCors("AllowSpecificOrigin"); // Apply CORS policy
+app.UseAuthorization();
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        context.Response.Headers["Access-Control-Allow-Origin"] = "https://inv-mngmnt-sys.vercel.app";
+        context.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+        context.Response.Headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization";
+        context.Response.StatusCode = 204;
+        return;
+    }
+    await next();
+});
+
+
+// app.UseCors(x => x
+//     .AllowAnyHeader()
+//     .AllowAnyMethod()
+//     .AllowCredentials()
+//     .WithOrigins("https://inv-mngmnt-sys.vercel.app")
+//     .SetIsOriginAllowed(origin => true)
+// );
 
 app.MapGet("/", () => "API is running!!!");
 app.MapControllers();
