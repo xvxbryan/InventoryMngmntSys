@@ -13,7 +13,9 @@ const CategoriesForSelect: React.FC<SetCategoryProps> = ({ category, setCategory
 
     useEffect(() => {
         const getCategories = async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get`,{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get`,
+            {
+                cache: "no-store",
                 method: 'GET',
                 mode: 'cors', // Ensures CORS is enabled
                 headers: {

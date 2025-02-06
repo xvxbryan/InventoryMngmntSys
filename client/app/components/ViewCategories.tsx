@@ -8,6 +8,7 @@ const ViewCategories = async () => {
     // Make GET request to retrieve all existing categories
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/get`,{
+            cache: "no-store",
             method: 'GET',
             mode: 'cors', // Ensures CORS is enabled
             headers: {

@@ -8,7 +8,7 @@ import Item from '../interfaces/Item';
 
 const ViewItems = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get`, { cache: "no-store" });
         const items : Item[] = await res.json();
         return (
             <div>

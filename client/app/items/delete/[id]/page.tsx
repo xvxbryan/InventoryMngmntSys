@@ -9,7 +9,7 @@ const DeleteItem = async ({ params }: PageProps) => {
 
     try {
         // Make GET request to get the specific Category by Id
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get/${id}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get/${id}`, { cache: "no-store" });
         const item: Item = await res.json();
 
         return (
