@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Item;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -25,8 +26,8 @@ namespace api.Controllers
 
         [HttpGet("get")]
         // This function will return a specific category from the database according to its Id
-        public async Task<IActionResult> GetAll() {
-            var item = await _itemRepo.GetAllAsync();
+        public async Task<IActionResult> GetAll([FromQuery] QueryObject query) {
+            var item = await _itemRepo.GetAllAsync(query);
             return Ok(item.ToList());
         }
 
