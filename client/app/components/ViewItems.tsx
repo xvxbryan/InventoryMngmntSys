@@ -2,14 +2,12 @@ import Link from 'next/link';
 import React from 'react'
 import Item from '../interfaces/Item';
 
-// This component displays all the existing items
+interface ViewProps {
+    items: Array<Item>;
+}
 
-
-
-const ViewItems = async () => {
+const ViewItems: React.FC<ViewProps> = ({ items }) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/item/get`, { cache: "no-store" });
-        const items : Item[] = await res.json();
         return (
             <div>
                 <table className="w-full text-left table-auto min-w-max mb-5">

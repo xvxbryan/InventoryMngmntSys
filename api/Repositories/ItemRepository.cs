@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Item;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using api.Models;
@@ -36,9 +37,14 @@ namespace api.Repositories
             return item;
         }
 
-        public async Task<List<Item>> GetAllAsync()
+        public async Task<List<Item>> GetAllAsync(QueryObject query)
         {
-            return await _context.Items.Include(c => c.Category).ToListAsync();
+            var items = _context.Items.Include(c => c.Category).AsQueryable();
+            if(!string.IsNullOrWhiteSpace(query.Name)) {
+                items = items.Where(i => i.Name.Contains(query.Name));
+            }
+
+            return await items.ToListAsync();
         }
 
         public async Task<Item?> GetByIdAsync(int id)
